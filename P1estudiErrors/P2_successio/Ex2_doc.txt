@@ -1,0 +1,12 @@
+2. Ens demanen calcular els 50 primers termes d'una successió. 
+
+a) Mitjançant una taula, comparem la propagació de l'error usant variables float o double.
+Observem que clarament la representació del nombre en variables float és molt menys acurada que en variables double.
+
+b) Càlcul de la propagació de l'error usant el teorema del valor mitjà. L'estimació de l'error per a x50 és:
+	- float --> -8.819772460937500e+03
+	- double --> -3.463420189325234e-03
+
+c) No són iguals, la precisió de f(x) és lleugerament millor ja que ens dona una cota d'error més petita per a x50
+	- f(X) --> -3.463420189325234e-03
+	- g(X) --> -4.134462317882540e-03

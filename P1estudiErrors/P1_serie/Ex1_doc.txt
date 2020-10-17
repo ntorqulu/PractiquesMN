@@ -1,0 +1,11 @@
+1. Ens demanen implementar el sumatori d'una sèrie divergent, en ordre creixent i decreixent.
+	
+a) El prorgama pararà, ja que arriba un punt en que els nombres que emmagatzema 	requereixen tants decimals que no hi caben en una variable tipus float. És per 		això que el programa arriba un punt en el que no diferencia el terme de la 		successió n-1 del terme n.
+	
+Justament, el programa s'atura quan n = 2097152, iteració que emmagatzema el valor 	1.540368270874023e+01, idèntic a l'anterior.
+
+El sumatori de la sèrie en ordre creixent és 1.540368270874023e+01
+
+
+b) Si sumem la sèrie harmònica en ordre decreixent, no obtenim el mateix resultat. Al començar sumant els termes més petits obtenim una major precisió i p.t. el resultat és més acurat.
+El sumatori de la sèrie en ordre decreixent és 1.513289928436279e+01

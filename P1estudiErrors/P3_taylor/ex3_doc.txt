@@ -1,0 +1,11 @@
+3. Ens demanen estudiar la funció f(x) =(x-sin(x))/x^3 al voltant de punts pròxims a 0, i evitar la cancel·lació de termes amb un algorisme alternatiu.
+
+a) Usem gnuplot per representar la funció f(x) i observem que per a punts propers a x = 0 la f tendeix al valor 0. Això és degut a la cancel·lació de termes pel part del numerador, ja que x-sin(x) tendeix a 0 per a x properes a 0 i també per part del denominador. Per tant, la funció no està ben definida en x=0.
+
+b) Busquem un algorisme alternatiu per avaluar la funció al voltant del 0 mitjançant Taylor. Desenvolupant el polinomi de Taylor de f al voltant del punt x trobem que f(x) aprox igual a p(x) = (1/6)-(x^2/120)+(x^4/5040) + O(x^6)
+Els tres primers termes segueixen idènticament a la funció, haurem d'acotar el residu de Lagrange per tal d'evitar que s'ens dispari l'error quan abs(x) <= 0.001.
+Quan acotem O(X^6) = (x^6 * cos(E))/362880) aquest resulta ser menor que 2.7557*10^-24 p.t queda provat que està acotat.
+
+c)L'error en a és degut a la cancel·lació de termes en el numerador. Això és solucionat amb una funció alternativa al voltant del x=0.
+
+//Les imatges de la representació de les funcions en gnuplot s'han adjuntat a la mateixa carpeta, amb els noms img1 i img2.
