@@ -1,8 +1,0 @@
-a) En el primer exercici ens demanen anar sumant els termes de la sèrie harmònica 1/i, iterant els valors de i = 1...n
-Ens diuen que el programa hauria de parar quan el terme de la sèrie sn-1 i sn són de valors tan semblants que esdevenen iguals per errors en la representació de floats en el computador. Ja que el nombre d'iteracions tendeix a l'ordre de 2*10⁶, he decidit acotar aquesta distància, fitada per èpsilon == 0.5*10^-3.
-Per tant, responent a les preguntes plantejades:
-- Creieu que el programa pararà? Si, però per valors de i molt elevats. És per això que acotem la diferència entre termes a l'ordre de èpsilon.
-- Per quin valor de n para? amb la meva fita, al valor n=201
-OJO --> Preguntar en classe de lab si hem de fitar o no!
-
-b) A continuació, ens demanen calcular aquesta sèrie en ordre invers, començant pel valor de n obtingut en el sumatori anterior. Observem que no obtenim el mateix resultat, ja que hem començat sumant els termes més petits primer. Això és degut a que en el sumatori de la sèrie (a) els últims dígits no contribueixen a la suma, ja que fl(S + 1/i) = S per a i suficientment gran. En canvi, començant pels termes meś petits evitem aquesta pèrdua.
