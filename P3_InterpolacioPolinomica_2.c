@@ -19,7 +19,7 @@ int main()
     f = (double*) malloc ((n) * sizeof (double));
     c= (double*) malloc ((n)* sizeof (double));
     for(i = 0; i< n; i++){
-        x[i] = -1.0*((interval_distance*i)/10.0);
+        x[i] = -1.0 + ((interval_distance*i)/10.0);
         f[i] = func(x[i]);
         printf("xi: %lf\t", x[i]);
         printf("fi: %lf\n", f[i]);
@@ -42,9 +42,9 @@ int main()
     fw = fopen("taulaValors.txt", "w");
 
     for(i = 0; i< num_of_points; i++){
-        point = -1.0*((interval_distance*i)/199.0);
+        point = (-1.0)+((double)(interval_distance*i)/199.0);
         x1 = avalua(point, x, c, n);
-        printf("Valor del polinomi interpolador:\t%lf\n", x1);
+        printf("Valor del polinomi interpolador:\t%lf\t%lf\n", point, x1);
         fprintf(fw, "%lf\t%lf\n", point, x1);
 
     }
