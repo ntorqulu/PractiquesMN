@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+double g(double t);
+double integral(double a, double b, double eps);
+double phi(double x, double eps);
+
+int main(int argc, const char * argv[]) {
+    
+    double eps = pow(10, -6);
+    int i = 0, n = 51;
+    double h = 0.01;
+    double a = 0.0, b = 0.5;
+    for(i = 0; i < n; i++){
+        printf("x%d = %.2lf\t", i, i*h);
+        printf("y%d = phi( x%d ) = %lf\t\n", i, i, phi(i*h, eps));
+    }
+    return 0;
+}
+
+double g(double t){
+    return exp((-1.0)*pow(t, 2.0));
+}
+
+double integral(double a, double b, double eps){
+    //comencem calculant el nombre d'iteracions que farem amb la formula de l'error
+    int n = 0, i;
+    double diference = b-a;
+    double sol = 0.0, h;
+    double fita = sqrt((pow(diference, 3.0)*2.0)/(12.0*eps));
+    
+    while(n<fita){
+        n+=1;
+    }//trobem nombre d'iteracions n
+    h = diference/(n);
+    
+    for(i = 1; i < n-1; i++){
+        sol += g(i*h);
+    }
+    sol+=g(a)/2.0;
+    sol+=g(b)/2.0;
+    sol*=(h);
+    
+    return sol;
+}
+
+double phi(double x, double eps){
+    //donat valor x resolem per nr equacio
+    double curr_y, next_y;
+    curr_y = x;
+    int surt = 0;
+    if(x==0) return 0;
+    while(surt!=1){
+        next_y = curr_y - ((integral(0.0, curr_y, eps) - x) / g(curr_y));
+        if((next_y - curr_y) < eps){ surt = 1;}
+        curr_y = next_y;
+    }
+    return next_y;
+}
